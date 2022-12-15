@@ -3,7 +3,7 @@ import sqlite3
 
 CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
     title TEXT,
-    realease_timestamp REAL,
+    release_timestamp REAL,
     watched INTEGER
 );"""
 
@@ -21,7 +21,7 @@ def create_table():
 
 def add_movie(title, release_timestamp):
     with connection:
-        connection.execute(INSERT_MOVIES)
+        connection.execute(INSERT_MOVIES, (title, release_timestamp))
 
 def get_movies(upcoming=False):
     with connection:
