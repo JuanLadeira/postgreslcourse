@@ -2,7 +2,7 @@ import database
 
 menu = """ Por favor selecione um das seguintes opções:
 1) Adicionar novo filme.
-2) Ver filmes prestes a lançar
+2) Ver proximo filme
 3) Ver todos os filmes
 4) Assistir um filme
 5) Ver filmes já assistidos
@@ -28,4 +28,4 @@ while (user_input := input(menu)) != "6":
         pass
     else:
         print("Esta seleção não é uma das opções validas, por favor tente novamente")
-        
+
