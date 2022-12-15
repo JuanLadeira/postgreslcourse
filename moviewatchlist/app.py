@@ -1,3 +1,4 @@
+import datetime
 import database
 
 menu = """ Por favor selecione um das seguintes opções:
@@ -14,6 +15,15 @@ bemvindo= "Seja bem vindo ao Watchlist App"
 
 print(bemvindo)
 database.create_tables()
+
+def promp_add_movie():
+    title = input("Titulo do filme")
+    release_date = input("Data de lançamento (dd-mm-YYYY): (DIA-MES-ANO)")
+    parsed_date = datetime.datetime.strptime(release_date, "%d-%m-%Y")
+    timestamp = parsed_date.timestamp()
+    database.add_movie(title, timestamp)
+
+    
 
 while (user_input := input(menu)) != "6":
     if user_input == '1':
